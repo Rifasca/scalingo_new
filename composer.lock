@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "71dd57bfb5b614babbf4e425b7fd20b7",
+    "packages": [
+        {
+            "name": "crodas/influx-php",
+            "version": "v0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crodas/InfluxPHP.git",
+                "reference": "400138f4da3426b2d1be6d32f7cdc2956bc4a6aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crodas/InfluxPHP/zipball/400138f4da3426b2d1be6d32f7cdc2956bc4a6aa",
+                "reference": "400138f4da3426b2d1be6d32f7cdc2956bc4a6aa",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "César D. Rodas",
+                    "email": "crodas@php.net"
+                }
+            ],
+            "description": "Simple client for InfluxDB",
+            "time": "2015-07-07T05:40:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

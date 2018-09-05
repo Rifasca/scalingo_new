@@ -1,0 +1,37 @@
+[
+    {
+        "name": "crodas/influx-php",
+        "version": "v0.9.1",
+        "version_normalized": "0.9.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/crodas/InfluxPHP.git",
+            "reference": "400138f4da3426b2d1be6d32f7cdc2956bc4a6aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/crodas/InfluxPHP/zipball/400138f4da3426b2d1be6d32f7cdc2956bc4a6aa",
+            "reference": "400138f4da3426b2d1be6d32f7cdc2956bc4a6aa",
+            "shasum": ""
+        },
+        "time": "2015-07-07T05:40:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-4-Clause"
+        ],
+        "authors": [
+            {
+                "name": "César D. Rodas",
+                "email": "crodas@php.net"
+            }
+        ],
+        "description": "Simple client for InfluxDB"
+    }
+]
