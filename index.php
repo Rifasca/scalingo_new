@@ -6,6 +6,11 @@ $url = parse_url(getenv('SCALINGO_INFLUX_URL'));
 
 $client = new \crodas\InfluxPHP\Client($url['host'], $url['port'], $url['user'], $url['pass']);
 echo "<pre>"; print_r($client); echo "</pre><br>";
+
+$cdvcs= getDatabases();
+echo "<pre>"; print_r($cdvcs); echo "</pre><br>";
+
+
 $db = $client->substr($url['path'], 1);
 $db->insert("foo", ['foobar' => 'bar']);
 
