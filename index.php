@@ -18,5 +18,4 @@ foreach ($result->query("SELECT * FROM foo;") as $row) {
     var_dump($row, $row->time);
 	echo "<pre>"; print_r($row); echo "</pre><br>";
 }
-
 ?>
