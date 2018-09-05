@@ -61,7 +61,7 @@ class Client extends BaseHTTP
     protected $user;
     protected $pass;
 
-    public function __construct($host = "localhost", $port = 30041, $u = 'pubnubtestapp_1617', $p = 'DznP0RCLz-gR3Fs1gKmO')
+    public function __construct($host = "localhost", $port = 30290, $u = 'pubnubinflux_5660', $p = 'lBLedc8_kDuY7wBfCLc_')
     {
         $this->host = $host;
         $this->port = $port;
