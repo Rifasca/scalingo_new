@@ -2,15 +2,19 @@
 	require 'vendor/autoload.php';
 	$url = parse_url(getenv('SCALINGO_INFLUX_URL'));
 	
-	echo "<pre>"; print_r($url); echo "</pre><br>";
-	echo "<pre>"; print_r($url['host']); echo "</pre><br>";
+	//echo "<pre>"; print_r($url); echo "</pre><br>";
+	//echo "<pre>"; print_r($url['host']); echo "</pre><br>";
 	
 	$client = new InfluxDB\Client($url['host'], $url['port']);
 	echo "<pre>"; print_r($client); echo "</pre><br>";
 	
 	// list databases
-	$result = $client->listDatabases();
-	echo "<pre>"; print_r($result); echo "</pre><br>";
+	// show a list of all users
+	$results = $client->admin->showUsers();
+
+	// show users returns a ResultSet object
+	$users = $results->getPoints();
+	echo "<pre>"; print_r($users); echo "</pre><br>";
 	// select the database
 	//$database = $client->selectDB('influx_test_db');
 
