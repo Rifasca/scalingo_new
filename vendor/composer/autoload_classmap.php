@@ -6,10 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'crodas\\InfluxPHP\\BaseHTTP' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/BaseHTTP.php',
-    'crodas\\InfluxPHP\\Client' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/Client.php',
-    'crodas\\InfluxPHP\\DB' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/DB.php',
-    'crodas\\InfluxPHP\\MultipleResultSeriesObject' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/MultipleResultSeriesObject.php',
-    'crodas\\InfluxPHP\\ResultSeriesObject' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/ResultSeriesObject.php',
-    'crodas\\InfluxPHP\\ResultsetBuilder' => $vendorDir . '/crodas/influx-php/lib/InfluxPHP/ResultsetBuilder.php',
 );
