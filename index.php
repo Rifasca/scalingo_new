@@ -1,12 +1,13 @@
 <?php
-	/* require 'vendor/autoload.php';
+	/* require 'vendor/autoload.php'; */
 	$url = parse_url(getenv('SCALINGO_INFLUX_URL'));
-	$client = new InfluxDB\Client($url['host'], $url['port']); */
+	//$client = new InfluxDB\Client($url['host'], $url['port']);
 	
 
 	require 'vendor/autoload.php';
 	// vagrant ip
-	$host = '192.168.33.10';
+	//$host = '192.168.33.10';
+	$host = $url['host'];
 	function randFloat($min, $max)
 	{
 		$range = $max-$min;
