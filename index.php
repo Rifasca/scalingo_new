@@ -7,7 +7,7 @@
 	require 'vendor/autoload.php';
 	// vagrant ip
 	//$host = '192.168.33.10';
-	$host = $url['host'];
+	$host = $url;
 	function randFloat($min, $max)
 	{
 		$range = $max-$min;
