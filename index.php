@@ -8,20 +8,23 @@
 	$client = new InfluxDB\Client($url['host'], $url['port']);
 	echo "<pre>"; print_r($client); echo "</pre><br>";
 	
+	// list databases
+	$result = $client->listDatabases();
+	echo "<pre>"; print_r($result); echo "</pre><br>";
 	// select the database
-	$database = $client->selectDB('influx_test_db');
+	//$database = $client->selectDB('influx_test_db');
 
 	// create the database with a retention policy
-	$result = $database->create(new RetentionPolicy('test', '5d', 1, true));
-	echo "database created 1";
+	//$result = $database->create(new RetentionPolicy('test', '5d', 1, true));
+	//echo "database created 1";
 	
 	// check if a database exists then create it if it doesn't
-	$database = $client->selectDB('test_db');
-	echo "database seleted";
+	//$database = $client->selectDB('test_db');
+	//echo "database seleted";
 	
-	if (!$database->exists()) {
-		$database->create(new RetentionPolicy('test', '1d', 2, true));
+	//if (!$database->exists()) {
+		//$database->create(new RetentionPolicy('test', '1d', 2, true));
 		
-		echo "database created 2";
-	}
+		//echo "database created 2";
+	//}
 ?>
