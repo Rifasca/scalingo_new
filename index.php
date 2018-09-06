@@ -8,7 +8,9 @@
 	$client = new InfluxDB\Client($url['host'], $url['port']);
 	echo "<pre>"; print_r($client); echo "</pre><br>";
 	
-	
+	// select the database
+	$database = $client->selectDB('influx_test_db');
+
 	// create the database with a retention policy
 	$result = $database->create(new RetentionPolicy('test', '5d', 1, true));
 	echo "database created 1";
