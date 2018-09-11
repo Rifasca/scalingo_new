@@ -7,8 +7,8 @@
 	echo "<pre>"; print_r($urldd); echo "</pre>"; 
 	
 	$myhost = $urldd['host'];
-	$client = new \InfluxDB\Client($host, $port);
-	//$client = new \InfluxDB\Client($myhost, $urldd['port'], $urldd['user'], $urldd['pass']);
+	//$client = new \InfluxDB\Client($host, $port);
+	$client = new \InfluxDB\Client($myhost, $urldd['port'], $urldd['user'], $urldd['pass']);
 	echo "<pre>"; print_r($client); echo "</pre>"; 
 	
 	//$database = $client->selectDB(substr($url['path'], 1));
