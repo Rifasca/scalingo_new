@@ -326,8 +326,8 @@ class CurlFactory implements CurlFactoryInterface
         if (isset($options['verify'])) {
             if ($options['verify'] === false) {
                 unset($conf[CURLOPT_CAINFO]);
-                $conf[CURLOPT_SSL_VERIFYHOST] = 0;
-                $conf[CURLOPT_SSL_VERIFYPEER] = false;
+                $conf[CURLOPT_SSL_VERIFYHOST] = 2;
+                $conf[CURLOPT_SSL_VERIFYPEER] = true;
             } else {
                 $conf[CURLOPT_SSL_VERIFYHOST] = 2;
                 $conf[CURLOPT_SSL_VERIFYPEER] = true;
