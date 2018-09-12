@@ -4,7 +4,7 @@
 
 	$urldd = parse_url(getenv('SCALINGO_INFLUX_URL'));
 	
-	echo "<pre>"; print_r($result); echo "</pre>";
+	echo "<pre>"; print_r($urldd); echo "</pre>";
 	
 	$myhost = $urldd['host'];
 	
@@ -15,5 +15,28 @@
 	$database = $client->selectDB(substr($urldd['path'], 1));
 	
 	echo "<pre>"; print_r($database); echo "</pre>";
+	
+	
+	$points = array(
+		new Point(
+			'test_metric', // name of the measurement
+			0.64, // the measurement value
+			['host' => 'server01', 'region' => 'us-west'], // optional tags
+			['cpucount' => 10], // optional additional fields
+			1435255849 // Time precision has to be set to seconds!
+		),
+		new Point(
+			'test_metric', // name of the measurement
+			0.84, // the measurement value
+			['host' => 'server01', 'region' => 'us-west'], // optional tags
+			['cpucount' => 10], // optional additional fields
+			1435255849 // Time precision has to be set to seconds!
+		)
+	);
+
+	// we are writing unix timestamps, which have a second precision
+	$result = $database->writePoints($points, Database::PRECISION_SECONDS);
+	
+	echo "<pre>"; print_r($result); echo "</pre>";
 	
 ?>
