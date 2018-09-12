@@ -1,7 +1,7 @@
 <?php
 
 	require 'vendor/autoload.php';
-
+	
 	$urldd = parse_url(getenv('SCALINGO_INFLUX_URL'));
 	
 	echo "<pre>"; print_r($urldd); echo "</pre>";
@@ -18,14 +18,14 @@
 	
 	
 	$points = array(
-		new Point(
+		new \InfluxDB\Point(
 			'test_metric', // name of the measurement
 			0.64, // the measurement value
 			['host' => 'server01', 'region' => 'us-west'], // optional tags
 			['cpucount' => 10], // optional additional fields
 			1435255849 // Time precision has to be set to seconds!
 		),
-		new Point(
+		new \InfluxDB\Point(
 			'test_metric', // name of the measurement
 			0.84, // the measurement value
 			['host' => 'server01', 'region' => 'us-west'], // optional tags
