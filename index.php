@@ -2,27 +2,19 @@
 
 	require 'vendor/autoload.php';
 
-	//$url = parse_url(getenv('SCALINGO_INFLUX_URL'));
-	$urldd = parse_url("https://pubnubinflux_5660:lBLedc8_kDuY7wBfCLc_@a7a24c87-160f-4c88-a38b-620dbad020e7.pubnubinflux-5660.influxdb.dbs.scalingo.com:30290/pubnubinflux_5660");
-	echo "<pre>"; print_r($urldd); echo "</pre>"; 
+	$urldd = parse_url(getenv('SCALINGO_INFLUX_URL'));
+	//$urldd = parse_url("https://pubnubinflux_5660:lBLedc8_kDuY7wBfCLc_@a7a24c87-160f-4c88-a38b-620dbad020e7.pubnubinflux-5660.influxdb.dbs.scalingo.com:30290/pubnubinflux_5660");
 	
 	$myhost = $urldd['host'];
 	
-	$client = new \InfluxDB\Client('127.0.0.1', '30290');
+	$client = new \InfluxDB\Client($myhost, $urldd['port'], $urldd['user'], $urldd['pass']);
 	
+	$database = $client->selectDB(substr($urldd['path'], 1));
 	
+	$result = $client->listDatabases();
 	
+	echo "<pre>"; print_r($result); echo "</pre>";
 	
-	//$client = new \InfluxDB\Client($myhost, $urldd['port'], $urldd['user'], $urldd['pass']);
-	
-	
-	echo "<pre>"; print_r($client); echo "</pre>"; 
-	
-	//$database = $client->selectDB(substr($url['path'], 1));
-	$database = $client->selectDB('pubnubinflux_5660');
-	
-	
-	echo "<pre>"; print_r($database); echo "</pre>"; 
 	
 	/* if ($database->exists()) {
 		$database->drop();
