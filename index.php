@@ -1,7 +1,6 @@
 <?php
 
 	require 'vendor/autoload.php';
-	
 	$urldd = parse_url(getenv('SCALINGO_INFLUX_URL'));
 	
 	echo "<pre>"; print_r($urldd); echo "</pre>";
@@ -35,7 +34,7 @@
 	);
 
 	// we are writing unix timestamps, which have a second precision
-	$result = $database->writePoints($points, Database::PRECISION_SECONDS);
+	$result = $database->writePoints($points, \InfluxDB\Database::PRECISION_SECONDS);
 	
 	echo "<pre>"; print_r($result); echo "</pre>";
 	
